@@ -1,4 +1,7 @@
 import { Router } from 'express';
+
+
+
 import {
   getAllReviews,
   getReview,
@@ -11,5 +14,12 @@ import {
 const router = Router();
 
 // TODO: wire up the routes described in README.md section 3.
+router.get('/summary/:courseCode', getCourseSummary);
+
+router.post('/', createReview);
+router.get('/', getAllReviews);
+router.get('/:id', getReview);
+router.patch('/:id',  updateReview);
+router.delete('/:id', deleteReview);
 
 export default router;
